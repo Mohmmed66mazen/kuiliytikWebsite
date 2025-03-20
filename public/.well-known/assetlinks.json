@@ -1,9 +1,11 @@
-[{
+[
+  {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.mx.kuilytuk",
       "sha256_cert_fingerprints":
-      [" E5:66:82:CC:67:25:70:5F:5C:9D:3D:DC:B7:78:50:A1:8C:C5:41:AB:6C:A6:F3:45:FC:C4:40:CB:C0:AD:E1:D5"]
+        ["E5:66:82:CC:67:25:70:5F:5C:9D:3D:DC:B7:78:50:A1:8C:C5:41:AB:6C:A6:F3:45:FC:C4:40:CB:C0:AD:E1:D5"]
     }
-  }]
+  }
+]
