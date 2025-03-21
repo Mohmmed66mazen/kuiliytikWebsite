@@ -2,7 +2,7 @@
     "headers":
      [
       {
-        "source": "/.well-known/*.json",  
+        "source": "/.well-known/assetlinks.json",  
         "headers":
          [
           {
