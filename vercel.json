@@ -1,0 +1,15 @@
+{
+    "headers":
+     [
+      {
+        "source": "/.well-known/*.json",  
+        "headers":
+         [
+          {
+            "key": "Content-Type",
+            "value": "application/json"  
+          }
+        ]
+      }
+    ]
+}
