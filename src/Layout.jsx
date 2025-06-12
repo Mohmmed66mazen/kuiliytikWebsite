@@ -23,21 +23,22 @@ function Header() {
   
     return (
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          scrolled ? "bg-background/80 backdrop-blur-md py-2 shadow-sm" : "bg-transparent py-4"
-        }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? "bg-background/80 backdrop-blur-md py-2 shadow-sm" : "bg-transparent py-4"
+      }`}
       >
-        <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-2">
-           
-              <img
-                src="/logoName.svg"
-                alt="Logo"
-                className="w-24"
-              />
-          </div>
-    <Button text="تواصل"/>
+      <div className="container flex items-center justify-between">
+        <div className="flex items-center gap-2">
+        <img
+          src="/logoName.svg"
+          alt="Logo"
+          className="w-24"
+        />
         </div>
+        <a href="https://t.me/mohmmed_mazen" target="_blank" rel="noopener noreferrer">
+        <Button text="تواصل" />
+        </a>
+      </div>
       </header>
     )
   }
