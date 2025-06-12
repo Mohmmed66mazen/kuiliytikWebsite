@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulituk</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: black;
+        color: white;
+        height: 100svh;
+    }
+    .center{
+        display: flex;
+        justify-self: center;
+        align-items: center;
+    }
+
+</style>
+<body class="center">
+        <p>Loding to the app</p>
+</body>
+
+<script>
+  
+  const  host = "mx://kulliytik"
+  const  phats = window.location.pathname
+  const  search = new URLSearchParams(window.location.search)
+  const collage ='/'+ search.get('col')
+  const card = search.get('card');
+    window.location.href = host+phats+collage+"?card="+card
+</script>
+</html>

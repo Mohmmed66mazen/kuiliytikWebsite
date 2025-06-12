@@ -1,16 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NoteFount from './NoteFount.jsx'
+
+import Home from './pages/Home.jsx'
+import NoteFount from './pages/NoteFount.jsx'
+import Layout from './Layout.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route index path='/' element={<App/>}/>
+      <Route element={<Layout/>}>
+      <Route index path='/' element={<Home/>}/>
       <Route path='*' element={<NoteFount/>} />
+      </Route>
     </Routes>
     </BrowserRouter>
   </StrictMode>,
