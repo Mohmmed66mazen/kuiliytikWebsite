@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Button from "../../components/button"
-
+import ReactGA from 'react-ga4';
 function Home() {
-
+    useEffect(() => {
+        ReactGA.initialize('G-M2K5J1CV7L');
+        ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+      }, []);
 
   return (
     <>
@@ -53,6 +56,21 @@ function Header() {
 }
 
 function HeroSection() {
+  // Add a handler to trigger GA event and download
+  const handleDownload = () => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Download Android App',
+      label: 'Download Button Clicked'
+    });
+    // Create a temporary link to trigger the download
+    const link = document.createElement('a');
+    link.href = '/kuiliytik.apk';
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section dir="rtl" className="py-20 md:py-32 lg:py-0 overflow-hidden">
       <div className="container px-4 md:px-6 relative">
@@ -75,9 +93,6 @@ function HeroSection() {
               </h1>
               <p className="text-xl text-muted-foreground ">نظم جدولك الدراسي وتتبع موادك بسهولة مع تطبيق كليتك.</p>
             </div>
-            <div id="downlod" className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
-              
-            </div>
           </motion.div>
           <motion.div
             className="flex items-center justify-center"
@@ -85,15 +100,14 @@ function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
+            <div id="downlod" className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
+              <button 
+                onClick={handleDownload}
+                className="h-11 text-xl font-bold rounded-md px-8 border border-input bg-primary hover:bg-accent hover:text-accent-foreground">
+                تحميل التطبيق للاندرويد
+              </button>
+            </div>
            
-         <a
-                href="/kuiliytik.apk"
-                download
-              >
-                <button className="h-11 text-xl font-bold rounded-md px-8 border border-input bg-primary hover:bg-accent hover:text-accent-foreground">
-                  تحميل التطبيق للاندرويد
-                </button>
-              </a>
           </motion.div>
         </div>
       </div>
