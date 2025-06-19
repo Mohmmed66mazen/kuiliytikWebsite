@@ -35,7 +35,7 @@ function Header() {
           className="w-24"
         />
         </div>
-        <a href="https://t.me/mohmmed_mazen" target="_blank" rel="noopener noreferrer">
+        <a href="./#conect"  rel="noopener noreferrer">
         <Button text="تواصل" />
         </a>
       </div>

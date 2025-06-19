@@ -15,44 +15,55 @@ function Home() {
       <HeroSection/>
       <FeaturesSection/>
       <CTASection/>
-      {/* <Footer/> */}
+      <Footer/>
       </div>
     </>
 
   )
 }
 
-function Header() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
+function Footer() {
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md py-2 shadow-sm" : "bg-transparent py-4"
-      }`}
-    >
-      <div className="container flex items-center justify-between">
-        <div className="flex items-center gap-2">
-         
-            <img
-              src="./logoName.svg"
-              alt="Logo"
-              className="w-24"
-            />
+    <footer dir="rtl" className="py-12">
+      <div id="conect" className="container px-4 md:px-6 flex flex-col items-center text-center">
+        <h3 className="text-2xl font-bold mb-4">تواصل معنا</h3>
+        <p className="text-muted-foreground mb-8 max-w-md">
+          تابعنا على منصات التواصل الاجتماعي للبقاء على اطلاع بآخر الأخبار والتحديثات.
+        </p>
+        <div className="flex gap-4">
+          <a
+            href="https://www.facebook.com/share/194tDHn1ay/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group  inline-flex items-center justify-center rounded-full bg-[#1877F2] w-12 h-12 transition-all duration-300 hover:w-36"
+          >
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
+            </svg>
+            <span className="text-white font-bold overflow-hidden max-w-0 group-hover:max-w-full transition-all duration-300 group-hover:ml-2">
+              فيسبوك
+            </span>
+          </a>
+          <a
+            href="https://t.me/mohmmed_mazen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center rounded-full bg-[#0088cc] w-12 h-12 transition-all duration-300 hover:w-36"
+          >
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.88-1.85 8.64c-.15.69-.57.86-1.13.53l-2.88-2.12-1.39 1.33c-.15.15-.28.28-.53.28l.2-2.94 5.2-4.7c.22-.2-.05-.32-.34-.12l-6.44 4.03-2.8-.87c-.68-.21-.69-.68.14-1.02l11.25-4.38c.57-.22 1.05.14.88.84z"/>
+            </svg>
+            <span className="text-white font-bold overflow-hidden max-w-0 group-hover:max-w-full transition-all duration-300 group-hover:ml-2">
+              تليجرام
+            </span>
+          </a>
         </div>
-  <Button text="تواصل"/>
+        <div className="mt-8 text-sm text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Kuiliytik. كل الحقوق محفوظة.</p>
+        </div>
       </div>
-    </header>
-  )
+    </footer>
+  );
 }
 
 function HeroSection() {
@@ -210,34 +221,25 @@ function CTASection() {
               <button className="h-11 rounded-md px-10 text-lg bg-secondary text-secondary-foreground hover:bg-secondary/80" >
                 حمل الان
               </button>
-
               </a>
             </div>
           </div>
         </motion.div>
+        {/* <div>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1877f2] text-white font-bold text-lg shadow-lg hover:bg-[#145db2] transition-colors duration-200"
+          >
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
+            </svg>
+            تابعنا على فيسبوك
+          </a>
+        </div> */}
       </div>
     </section>
-  )
-}
-function Footer() {
-  return (
-    <footer className="py-8 border-t border-border/40">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col sm:flex-row justify-between items-center">
-          <div className="flex items-center gap-2 mb-4 sm:mb-0">
- 
-              <img
-                src="./logo.svg"
-                alt="Logo"
-                className="w-4"
-              />
-              <span>{new Date().getFullYear()}</span>
-
-          </div>
-
-        </div>
-      </div>
-    </footer>
   )
 }
 
